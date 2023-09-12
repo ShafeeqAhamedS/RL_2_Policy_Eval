@@ -4,11 +4,12 @@
 To develop a Python program to evaluate the given policy.
 
 ## PROBLEM STATEMENT
-Problem Statement
+<img width="650" src="https://github.com/ShafeeqAhamedS/RL_2_Policy_Eval/assets/93427237/e7af87e7-fe73-47fa-8bea-2040b7645e44">
 
 ## POLICY EVALUATION FUNCTION
 
 ### Formula
+<img width="450" src="https://github.com/ShafeeqAhamedS/RL_2_Policy_Eval/assets/93427237/e663bd3d-fc85-41c3-9a5c-dffa57eae250">
 
 ### Program
 ```py
@@ -47,6 +48,7 @@ def policy_evaluation(pi, P, gamma=1.0, theta=1e-10):
 ![image](https://github.com/ShafeeqAhamedS/RL_2_Policy_Eval/assets/93427237/0435f712-b2a4-44e8-ab64-a37fde842551)
 ### Comparison
 ![image](https://github.com/ShafeeqAhamedS/RL_2_Policy_Eval/assets/93427237/4c85b228-5826-43a1-9733-44a99a57cb42)
+</br>
 ![image](https://github.com/ShafeeqAhamedS/RL_2_Policy_Eval/assets/93427237/4c0e961c-301e-4d9b-96cc-cdeb490f13c9)
 
 
