@@ -51,7 +51,7 @@ def policy_evaluation(pi, P, gamma=1.0, theta=1e-10):
     prev_V = np.zeros(len(P), dtype=np.float64)
 
     while True:
-        '''Intialize the current iteration estmates to zero'''
+        '''Intialize the current iteration estimates to zero'''
         V=np.zeros(len(P),dtype=np.float64)
         
         for s in range(len(P)):
