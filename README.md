@@ -10,9 +10,7 @@ The bandit slippery walk problem is a reinforcement learning problem in which an
 ### States
 
 The environment has 7 states:
-* Two Terminal States:
-    * **G**: The goal state.
-    * **H**: A hole state.
+* Two Terminal States: **G**: The goal state & **H**: A hole state.
 * Five Transition states / Non-terminal States including  **S**: The starting state.
 
 ### Actions
@@ -37,36 +35,36 @@ For example, if the agent is in state S and takes the "R" action, then there is 
 The agent receives a reward of +1 for reaching the goal state (G). The agent receives a reward of 0 for all other states.
 
 ### Graphical Represtation
-<img width="650" src="https://github.com/ShafeeqAhamedS/RL_2_Policy_Eval/assets/93427237/e7af87e7-fe73-47fa-8bea-2040b7645e44">
+<p align="center">
+<img width="600" src="https://github.com/ShafeeqAhamedS/RL_2_Policy_Eval/assets/93427237/e7af87e7-fe73-47fa-8bea-2040b7645e44"> </p>
 
 
 ## POLICY EVALUATION FUNCTION
 
 ### Formula
-<img width="450" src="https://github.com/ShafeeqAhamedS/RL_2_Policy_Eval/assets/93427237/e663bd3d-fc85-41c3-9a5c-dffa57eae250">
+<img width="350" src="https://github.com/ShafeeqAhamedS/RL_2_Policy_Eval/assets/93427237/e663bd3d-fc85-41c3-9a5c-dffa57eae250">
 
 ### Program
 ```py
 def policy_evaluation(pi, P, gamma=1.0, theta=1e-10):
-    # Intialize 1st Iteration estimates of state-value function(V) to zero
+   	'''Intialize 1st Iteration estimates of state-value function(V) to zero'''
     prev_V = np.zeros(len(P), dtype=np.float64)
 
     while True:
-        # Intialize the current iteration estmates to zero
+        '''Intialize the current iteration estmates to zero'''
         V=np.zeros(len(P),dtype=np.float64)
-
-        # Loop through all states
+        
         for s in range(len(P)):
-
-            # Loop throught action of our policy for every state
+        
+            '''Update the value function for each state'''
             for prob,next_state,reward,done in P[s][pi(s)]:
                 V[s] += prob * (reward + gamma * prev_V[next_state] * (not done))
-
-            # Check the difference between State Value Function between after each iteration, to see whetehr it have converged 
+                
+            '''Check for convergence'''
             if np.max(np.abs(prev_V-V))<theta:
                 break
-
-            # If not converged update the Value of previous estimation with current estimations
+                
+            '''Update the previous state-value function'''
             prev_V=V.copy()
         return V
 ```
@@ -82,8 +80,9 @@ def policy_evaluation(pi, P, gamma=1.0, theta=1e-10):
 ![image](https://github.com/ShafeeqAhamedS/RL_2_Policy_Eval/assets/93427237/0435f712-b2a4-44e8-ab64-a37fde842551)
 ### Comparison
 ![image](https://github.com/ShafeeqAhamedS/RL_2_Policy_Eval/assets/93427237/4c85b228-5826-43a1-9733-44a99a57cb42)
-</br>
-![image](https://github.com/ShafeeqAhamedS/RL_2_Policy_Eval/assets/93427237/4c0e961c-301e-4d9b-96cc-cdeb490f13c9)
+### Conclusion
+<p align="center">
+<img src="https://github.com/ShafeeqAhamedS/RL_2_Policy_Eval/assets/93427237/4c0e961c-301e-4d9b-96cc-cdeb490f13c9"> </p>
 
 
 ## RESULT:
