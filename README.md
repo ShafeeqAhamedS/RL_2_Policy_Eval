@@ -7,7 +7,34 @@ To develop a Python program to evaluate the given policy.
 Problem Statement
 
 ## POLICY EVALUATION FUNCTION
-Include the policy evaluation function
+
+### Formula
+
+### Program
+```py
+def policy_evaluation(pi, P, gamma=1.0, theta=1e-10):
+    # Intialize 1st Iteration estimates of state-value function(V) to zero
+    prev_V = np.zeros(len(P), dtype=np.float64)
+
+    while True:
+        # Intialize the current iteration estmates to zero
+        V=np.zeros(len(P),dtype=np.float64)
+
+        # Loop through all states
+        for s in range(len(P)):
+
+            # Loop throught action of our policy for every state
+            for prob,next_state,reward,done in P[s][pi(s)]:
+                V[s] += prob * (reward + gamma * prev_V[next_state] * (not done))
+
+            # Check the difference between State Value Function between after each iteration, to see whetehr it have converged 
+            if np.max(np.abs(prev_V-V))<theta:
+                break
+
+            # If not converged update the Value of previous estimation with current estimations
+            prev_V=V.copy()
+        return V
+```
 
 ## OUTPUT:
 ### Policy 1
