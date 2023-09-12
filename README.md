@@ -1,4 +1,4 @@
-# POLICY EVALUATION
+# <p align="center">POLICY EVALUATION</p>
 
 ## AIM
 To develop a Python program to evaluate the given policy.
