@@ -4,7 +4,7 @@
 To develop a Python program to evaluate the given policy.
 
 ## PROBLEM STATEMENT
-Explain the problem statement.
+Problem Statement
 
 ## POLICY EVALUATION FUNCTION
 Include the policy evaluation function
