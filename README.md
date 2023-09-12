@@ -34,7 +34,7 @@ For example, if the agent is in state S and takes the "R" action, then there is 
 
 The agent receives a reward of +1 for reaching the goal state (G). The agent receives a reward of 0 for all other states.
 
-### Graphical Represtation
+### Graphical Representation
 <p align="center">
 <img width="600" src="https://github.com/ShafeeqAhamedS/RL_2_Policy_Eval/assets/93427237/e7af87e7-fe73-47fa-8bea-2040b7645e44"> </p>
 
@@ -47,11 +47,11 @@ The agent receives a reward of +1 for reaching the goal state (G). The agent rec
 ### Program
 ```py
 def policy_evaluation(pi, P, gamma=1.0, theta=1e-10):
-   	'''Intialize 1st Iteration estimates of state-value function(V) to zero'''
+   	'''Initialize 1st Iteration estimates of state-value function(V) to zero'''
     prev_V = np.zeros(len(P), dtype=np.float64)
 
     while True:
-        '''Intialize the current iteration estimates to zero'''
+        '''Initialize the current iteration estimates to zero'''
         V=np.zeros(len(P),dtype=np.float64)
         
         for s in range(len(P)):
